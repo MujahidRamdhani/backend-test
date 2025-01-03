@@ -1,0 +1,110 @@
+
+###
+// create data penerima bantuan
+POST http://localhost:9999/api/laporan-bantuan
+Content-Type: application/json
+Accept: application/json
+
+{
+  "namaProgram": "Bantuan Sosial Pendidikan",
+  "jumlahPenerima": 150,
+  "tanggalPenyaluran": "2025-01-01T09:00:00Z",
+  "provinsiId": "5",
+  "kabupatenId": "3",
+  "kecamatanId": "1",
+  "catatanTambahan": "Penyaluran melalui sekolah setempat",
+  "urlBuktiPenyaluran": "https://example.com/bukti-penyaluran",
+  "email": "mujahidramdhani@gmail.com"
+}
+
+
+###
+// create data penerima bantuan
+PUT http://localhost:9999/api/laporan-bantuan/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "namaProgram": "Bantuan Sosial Pendidikan",
+  "jumlahPenerima": 120,
+  "tanggalPenyaluran": "2025-01-01T09:00:00Z",
+  "provinsiId": 1,
+  "kabupatenId": 1,
+  "kecamatanId": 1,
+  "namaProvinsi": "Jawa Barat",
+  "namaKabupaten": "Bandung",
+  "namaKecamatan": "Cicendo",
+  "catatanTambahan": "Penyaluran melalui sekolah setempat",
+  "urlBuktiPenyaluran": "https://example.com/bukti-penyaluran",
+  "email": "mujahidramdhani@gmail.com"
+}
+
+
+###
+// create data penerima bantuan
+PUT http://localhost:9999/api/laporan-bantuan-perbarui-status/13
+Content-Type: application/json
+Accept: application/json
+
+{
+  "status": "Disetujui"
+}
+
+
+###
+POST  http://localhost:9999/api/laporan-bantuan/filterLaporan
+Content-Type: application/json
+Accept: application/json
+
+{
+  "namaProgram": "Bantuan Sosial Pendidikan",
+  "kabupatenId": 1,
+  "kecamatanId": 1
+}
+
+
+###
+POST  http://localhost:9999/api/laporan-bantuan/downloadPdfReport
+Content-Type: application/json
+Accept: application/json
+
+{
+  "tanggalMulai": "2025-01-01T00:00:00.000Z",
+  "tanggalSelesai": "2025-01-01T00:00:00.000Z"
+}
+
+###
+POST  http://localhost:9999/api/laporan-bantuan/downloadCsvReport
+Content-Type: application/json
+Accept: application/json
+
+{
+  "tanggalMulai": "2025-01-01T00:00:00.000Z",
+  "tanggalSelesai": "2025-01-01T00:00:00.000Z"
+}
+
+###
+GET  http://localhost:9999/api/laporan-bantuan
+Content-Type: application/json
+Accept: application/json
+
+
+
+###
+GET  http://localhost:9999/api/laporan-bantuan/getTotalLaporan
+Content-Type: application/json
+Accept: application/json
+
+###
+GET  http://localhost:9999/api/laporan-bantuan/getPenerimaPerProgram
+Content-Type: application/json
+Accept: application/json
+
+###
+GET  http://localhost:9999/api/laporan-bantuan/getGrafikPenyaluran
+Content-Type: application/json
+Accept: application/json
+
+
+###
+GET https://alamat.thecloudalert.com/api/provinsi/get/
